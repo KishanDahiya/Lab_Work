@@ -3,7 +3,6 @@
 //Demonstrate various methods such as get, put and set operations.
 //Sort based on key for treemap and hashmap.
 
-
 package Lab1;
 import java.util.*;
 import java.util.Map.Entry;
@@ -100,6 +99,9 @@ public class Lab1A {
 					+ "7.Update the value\n"
 					+ "8.Sort the Map\n"
 					+ "9.Display the Map\n"
+					+ "10.[Only for TreeMap]Poll First Entry\n"
+					+ "11.[Only for TreeMap]Poll Last Entry\n"
+					+ "12.[Only for TreeMap]TailMap\n"
 					+ "Press 0 to exit");
 			choice=sc.nextInt();
 			if(choice==1) {
@@ -136,6 +138,27 @@ public class Lab1A {
 			}else
 			if(choice==9) {
 				System.out.println(map1);
+			}else
+			if(choice==10) {
+				TreeMap<String, String> map2 = new TreeMap<>();
+		        map2.putAll(map1);
+		        map2.pollFirstEntry();
+		        System.out.println("First entry is removed");
+				System.out.println(map2);	        
+			}else
+			if(choice==11) {
+				TreeMap<String, String> map2 = new TreeMap<>();
+		        map2.putAll(map1);
+		        map2.pollLastEntry();
+		        System.out.println("Last entry is removed");
+				System.out.println(map2);
+			}else
+			if(choice==12) {
+				TreeMap<String, String> map2 = new TreeMap<>();
+		        map2.putAll(map1);
+		        System.out.println("Enter the key :");
+		        map2.tailMap(sc.next());	
+				System.out.println(map2);
 			}else
 			if(choice==0) {
 				break;
